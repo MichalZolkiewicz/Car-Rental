@@ -1,2 +1,4 @@
-package com.car.rental.repositories;public class RentalRepository {
+package com.car.rental.repositories;
+
+public interface RentalRepository {
 }

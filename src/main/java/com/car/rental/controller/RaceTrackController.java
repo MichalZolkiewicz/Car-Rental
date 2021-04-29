@@ -1,2 +1,4 @@
-package com.car.rental.controller;public class RaceTrackController {
+package com.car.rental.controller;
+
+public class RaceTrackController {
 }

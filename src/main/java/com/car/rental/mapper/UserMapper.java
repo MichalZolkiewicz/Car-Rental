@@ -1,2 +1,4 @@
-package com.car.rental.mapper;public class UserMapper {
+package com.car.rental.mapper;
+
+public class UserMapper {
 }

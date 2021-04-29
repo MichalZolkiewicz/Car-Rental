@@ -1,2 +1,4 @@
-package com.car.rental.domain;public class User {
+package com.car.rental.domain;
+
+public class User {
 }
