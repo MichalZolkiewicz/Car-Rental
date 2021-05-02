@@ -1,18 +1,17 @@
 package com.car.rental.domain;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDate;
 
-@AllArgsConstructor
 @Getter
+@Builder
 public class RentalDto {
 
-    private Long id;
-    private String model;
-    private String username;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private final Long id;
+    private final LocalDate startDate;
+    private final LocalDate endDate;
+    private final Double price;
 
 }
