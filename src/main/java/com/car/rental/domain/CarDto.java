@@ -1,15 +1,16 @@
 package com.car.rental.domain;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 
-@AllArgsConstructor
+@Builder
 @Getter
 public class CarDto {
 
-    private Long id;
-    private String brand;
-    private String model;
-    private Double price;
+    private final Long id;
+    private final String brand;
+    private final String model;
+    private final Double price;
+    private final String status;
 
 }
