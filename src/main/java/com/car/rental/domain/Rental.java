@@ -38,4 +38,10 @@ public class Rental {
     @Column(name = "price")
     private Double price;
 
+    public Rental(Long id, LocalDate startDate, LocalDate returnDate, Double price) {
+        this.id = id;
+        this.startDate = startDate;
+        this.returnDate = returnDate;
+        this.price = price;
+    }
 }
