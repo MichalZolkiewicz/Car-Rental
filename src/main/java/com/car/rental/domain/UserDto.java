@@ -1,15 +1,15 @@
 package com.car.rental.domain;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 
-@AllArgsConstructor
+@Builder
 @Getter
 public class UserDto {
 
-    private Long id;
-    private String name;
-    private String lastname;
-    private String email;
-    private boolean isBlocked;
+    private final Long id;
+    private final String name;
+    private final String lastname;
+    private final String email;
+    private final boolean isBlocked;
 }
