@@ -1,9 +1,6 @@
 package com.car.rental.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +10,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @EqualsAndHashCode
 @Entity(name = "cars")
 public class Car {
@@ -29,6 +27,9 @@ public class Car {
 
     @Column(name = "price")
     private Double price;
+
+    @Column(name = "status")
+    private String status;
 
     public Car(String brand, String model, Double price) {
         this.brand = brand;
