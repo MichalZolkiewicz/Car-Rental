@@ -15,27 +15,27 @@ public class UserController {
 
     private final UserFacade userFacade;
 
-    @GetMapping(name = "/users")
+    @GetMapping(value = "/users")
     public List<UserDto> getAllUsers() {
         return userFacade.getAllUsers();
     }
 
-    @GetMapping(name = "/users/{userId}")
+    @GetMapping(value = "/users/{userId}")
     public UserDto getUser(@PathVariable Long userId) {
         return userFacade.getUserDto(userId);
     }
 
-    @PostMapping(name = "/users")
+    @PostMapping(value = "/users")
     public Long createUser(@RequestBody UserDto userDto) {
         return userFacade.saveUser(userDto);
     }
 
-    @PutMapping(name = "/users/{userId}")
+    @PutMapping(value = "/users/{userId}")
     public Long updateUserStatus(@PathVariable Long userId, @RequestParam boolean status) {
         return userFacade.updateUserStatus(userId, status);
     }
 
-    @DeleteMapping(name = "users/{userId}")
+    @DeleteMapping(value = "users/{userId}")
     public void deleteUser(@PathVariable Long userId) {
         userFacade.deleteUser(userId);
     }
