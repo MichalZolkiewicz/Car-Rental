@@ -11,6 +11,7 @@ public class CarDto {
     private final String brand;
     private final String model;
     private final Double price;
+    private final Double consumption;
     private final String status;
 
 }
