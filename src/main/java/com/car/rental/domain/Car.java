@@ -28,6 +28,9 @@ public class Car {
     @Column(name = "price")
     private Double price;
 
+    @Column(name = "consumption")
+    private Double consumption;
+
     @Column(name = "status")
     private String status;
 
