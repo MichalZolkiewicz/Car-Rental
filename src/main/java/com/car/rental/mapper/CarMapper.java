@@ -21,6 +21,7 @@ public class CarMapper {
                 .brand(car.getBrand())
                 .model(car.getModel())
                 .price(car.getPrice())
+                .consumption(car.getConsumption())
                 .status(car.getStatus())
                 .build();
     }
