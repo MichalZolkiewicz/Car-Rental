@@ -1,5 +1,6 @@
 package com.car.rental.facade;
 
+import com.car.rental.domain.Car;
 import com.car.rental.domain.Rental;
 import com.car.rental.domain.RentalDto;
 import com.car.rental.mapper.RentalMapper;
@@ -13,6 +14,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RentalFacade {
 
+    private final PetrolFacade petrolFacade;
+    private final CarFacade carFacade;
     private final RentalRepository rentalRepository;
     private final RentalMapper rentalMapper;
 
@@ -40,10 +43,13 @@ public class RentalFacade {
         rentalRepository.deleteById(rentalId);
     }
 
-    public RentalDto updateRental(final RentalDto rentalDto) {
-        Rental rental = rentalMapper.mapToRental(rentalDto);
-        Rental updateRental = rentalRepository.save(rental);
-        return rentalMapper.mapToRentalDto(updateRental);
+    public void finishRental(final long rentalId, final Long kilometersDone) {
+        Rental rental = rentalRepository.findById(rentalId);
+        rental.setKilometersDone(kilometersDone);
+        double fuelLitresUsed = (kilometersDone/100.00) * rental.getCar().getConsumption();
+        rental.setPrice(fuelLitresUsed * petrolFacade.countPetrolPricePerOneLitre());
+        String carStatus = "available";
+        Car newCarStatus = carFacade.getCar(rental.getCar().getId());
+        newCarStatus.setStatus(carStatus);
     }
-
 }
