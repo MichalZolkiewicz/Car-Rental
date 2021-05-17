@@ -31,8 +31,8 @@ public class RentalController {
     }
 
     @PutMapping(value = "rentals")
-    public RentalDto updateRental(@RequestBody RentalDto rentalDto) {
-        return rentalFacade.updateRental(rentalDto);
+    public void finishRental(@RequestParam Long rentalId, @RequestParam Long kilometersDone) {
+        rentalFacade.finishRental(rentalId, kilometersDone);
     }
 
     @DeleteMapping(value = "rentals/{rentalId}")
