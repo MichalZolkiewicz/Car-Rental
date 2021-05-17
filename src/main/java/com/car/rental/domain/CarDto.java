@@ -13,5 +13,7 @@ public class CarDto {
     private final Double price;
     private final Double consumption;
     private final String status;
+    private final Long kilometersStart;
+    private final Long kilometersFinish;
 
 }
