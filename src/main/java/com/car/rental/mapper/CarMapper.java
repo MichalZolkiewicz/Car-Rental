@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class CarMapper {
 
     public Car mapToCar(CarDto carDto) {
-        return new Car(carDto.getBrand(), carDto.getModel(), carDto.getPrice());
+        return new Car(carDto.getBrand(), carDto.getModel(), carDto.getPrice(), carDto.getKilometersStart());
     }
 
     public CarDto mapToCarDto(Car car) {
@@ -23,6 +23,8 @@ public class CarMapper {
                 .price(car.getPrice())
                 .consumption(car.getConsumption())
                 .status(car.getStatus())
+                .kilometersStart(car.getKilometersStart())
+                .kilometersFinish(car.getKilometersFinish())
                 .build();
     }
 
