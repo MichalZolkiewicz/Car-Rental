@@ -34,9 +34,16 @@ public class Car {
     @Column(name = "status")
     private String status;
 
-    public Car(String brand, String model, Double price) {
+    @Column(name = "kilometers_start")
+    private Long kilometersStart;
+
+    @Column(name = "kilometers_finish")
+    private Long kilometersFinish;
+
+    public Car(String brand, String model, Double price, Long kilometersStart) {
         this.brand = brand;
         this.model = model;
         this.price = price;
+        this.kilometersStart = kilometersStart;
     }
 }
