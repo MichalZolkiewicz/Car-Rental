@@ -30,8 +30,8 @@ public class RentalController {
         return rentalFacade.saveRental(rentalDto);
     }
 
-    @PutMapping(value = "rentals")
-    public void finishRental(@RequestParam Long rentalId, @RequestParam Long kilometersDone) {
+    @PutMapping(value = "rentals/{rentalId}")
+    public void finishRental(@PathVariable Long rentalId, @RequestParam Long kilometersDone) {
         rentalFacade.finishRental(rentalId, kilometersDone);
     }
 
