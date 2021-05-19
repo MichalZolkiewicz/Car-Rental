@@ -3,6 +3,7 @@ package com.car.rental.controller;
 import com.car.rental.domain.CarDto;
 import com.car.rental.facade.CarFacade;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,14 +26,14 @@ public class CarController {
         return carFacade.getCarDto(carId);
     }
 
-    @PostMapping(value = "/cars")
+    @PostMapping(value = "/cars", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Long addCar(@RequestBody CarDto carDto) {
         return carFacade.saveCar(carDto);
     }
 
-    @PutMapping(value = "/cars")
-    public Long updateCarStatus(@RequestParam Long copyId, @RequestParam String status) {
-        return carFacade.updateCarStatus(copyId, status);
+    @PutMapping(value = "/cars/{carId}")
+    public Long updateCarStatus(@PathVariable Long carId, @RequestParam String status) {
+        return carFacade.updateCarStatus(carId, status);
     }
 
     @DeleteMapping(value = "/cars/{carId}")
