@@ -21,7 +21,7 @@ public class EmailScheduler {
     private final RentalRepository rentalRepository;
     private final AdminConfig adminConfig;
 
-    @Scheduled(cron = "0 */6 * * *")
+    @Scheduled(cron = "0 0 */6 * * *")
     public void sendSoonExpiringRentalInformation() {
 
         List<Rental> rentalList = rentalRepository.findAll();
