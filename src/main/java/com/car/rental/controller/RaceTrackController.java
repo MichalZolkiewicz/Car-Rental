@@ -30,13 +30,13 @@ public class RaceTrackController {
         return raceTrackFacade.saveRaceTrack(raceTrackDto);
     }
 
-    @PutMapping(value = "/raceTracks")
-    public Long updateRaceTrackStatus(@RequestParam Long raceTrackId, @RequestParam boolean status) {
+    @PutMapping(value = "/raceTracks/{raceTrackId}")
+    public Long updateRaceTrackStatus(@PathVariable Long raceTrackId, @RequestParam boolean status) {
         return raceTrackFacade.updateRaceTrackStatus(raceTrackId, status);
     }
 
-    @DeleteMapping(value = "/raceTracks")
-    public void deleteRaceTrack(@RequestParam Long raceTrackId) {
+    @DeleteMapping(value = "/raceTracks/{raceTrackId}")
+    public void deleteRaceTrack(@PathVariable Long raceTrackId) {
         raceTrackFacade.deleteRaceTrack(raceTrackId);
     }
 }
